@@ -14,7 +14,12 @@
 <head>
     <title>Title</title>
 </head>
-
+<script>
+    function delete_ok(id){
+        var a = confirm("정말로 삭제하시겠습니까?");
+        if(a) location.href= 'deleteok/' + id;
+    }
+</script>
 
 <body>
 
@@ -23,10 +28,11 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
+            <th>Category</th>
+            <th>제목</th>
+            <th>글쓴이</th>
+            <th>내용</th>
+            <th>등록일</th>
         </tr>
         </thead>
         <tbody>
@@ -39,7 +45,7 @@
                 <td>${u.content}</td>
                 <td>${u.regdate}</td>
                 <td><a href="editform/${u.seq}">Edit</a> </td>
-                <td><a href="javascript:delete_ok('${u.seq}')">Delete</a> </td>
+                <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
             </tr>
         </c:forEach>
         </tbody>

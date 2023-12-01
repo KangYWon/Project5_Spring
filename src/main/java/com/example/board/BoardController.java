@@ -5,12 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 @Controller
 @RequestMapping(value = "/board")
 public class BoardController {
     @Autowired
-    BoardService boardService;
+    BoardServiceImpl boardService;
     @RequestMapping("/list")
     public String boardlist(Model model){
         model.addAttribute("list", boardService.getBoardList());
@@ -39,13 +41,13 @@ public class BoardController {
         return "editform";
     }
 
-    @RequestMapping("/editok")
+    @RequestMapping(value = "/editok", method = RequestMethod.POST)
     public String editPostOK(BoardVO vo){
-        int i= boardService.updateBoard(vo);
+        int i=boardService.updateBoard(vo);
         if(i==0)
-            System.out.println("데이터 추가 실패!");
+            System.out.println("데이터 수정 실패!");
         else
-            System.out.println("데이터 추가 성공!!");
+            System.out.println("데이터 수정 성공!!");
         return "redirect:list";
     }
 

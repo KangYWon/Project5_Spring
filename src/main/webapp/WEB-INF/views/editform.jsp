@@ -1,8 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
 
-
- <%@page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +11,9 @@
 
 <body>
 
-
 <h1>Edit Form</h1>
-<form:form commandName="boardVO" action="../editok" method="post">
+
+<form:form commandName="boardVO" method="post" action="../editok" >
 	<form:hidden path="seq"/>
 	<table id="edit">
 		<tr><td>Category:</td><td><form:input path="category"/></td></tr>
