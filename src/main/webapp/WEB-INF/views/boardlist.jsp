@@ -44,6 +44,7 @@
                 <td>${u.writer}</td>
                 <td>${u.content}</td>
                 <td>${u.regdate}</td>
+                <td><a href="view/${u.seq}">View</a> </td>
                 <td><a href="editform/${u.seq}">Edit</a> </td>
                 <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
             </tr>

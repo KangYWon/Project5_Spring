@@ -37,7 +37,7 @@ public class BoardController {
     @RequestMapping("/editform/{id}")
     public String editPost(@PathVariable("id") int id, Model model){
         BoardVO boardVO = boardService.getBoard(id);
-        model.addAttribute("boardVO", boardVO);
+        model.addAttribute("u", boardVO);
         return "editform";
     }
 
@@ -59,5 +59,13 @@ public class BoardController {
             System.out.println("데이터 삭제 성공!!");
         return "redirect:../list";
     }
+
+    @RequestMapping("/view/{id}")
+    public String viewPost(@PathVariable("id") int id, Model model) {
+        BoardVO boardVO = boardService.getBoard(id);
+        model.addAttribute("boardVO", boardVO);
+        return "view";
+    }
+
 
 }

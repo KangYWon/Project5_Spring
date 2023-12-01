@@ -30,14 +30,15 @@ public class BoardDAO {
     }
 
     public int updateBoard(BoardVO vo) {
-        String sql = "update BoardSpring set title='"
-                + "title ='" + vo.getTitle() + "',"
-                + "writer ='" + vo.getWriter() + "',"
-                + "content ='" + vo.getContent() + "',"
-                + "category ='" + vo.getCategory() + "',"
-                + "' where seq= " + vo.getSeq();
+        String sql = "UPDATE BoardSpring SET "
+                + "title = '" + vo.getTitle() + "', "
+                + "writer = '" + vo.getWriter() + "', "
+                + "content = '" + vo.getContent() + "', "
+                + "category = '" + vo.getCategory() + "' "
+                + "WHERE seq = " + vo.getSeq();
         return jdbcTemplate.update(sql);
     }
+
 
     /*public List<BoardVO> getBoardList(){
         String sql = "select * from BoardSpring order by seq desc";
