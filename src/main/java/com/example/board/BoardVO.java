@@ -1,5 +1,4 @@
-package com.example.bean;
-
+package com.example.board;
 
 import java.util.Date;
 
@@ -8,58 +7,52 @@ public class BoardVO {
     private String title;
     private String writer;
     private String content;
+    private String category;
     private Date regdate;
     private int cnt;
 
-    public BoardVO() {
-    }
-
     public int getSeq() {
-        return this.seq;
+        return seq;
     }
-
     public void setSeq(int seq) {
         this.seq = seq;
     }
-
     public String getTitle() {
-        return this.title;
+        return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public String getWriter() {
-        return this.writer;
+        return writer;
     }
-
     public void setWriter(String writer) {
         this.writer = writer;
     }
-
     public String getContent() {
-        return this.content;
+        return content;
     }
-
     public void setContent(String content) {
         this.content = content;
     }
-
     public Date getRegdate() {
-        return this.regdate;
+        return regdate;
     }
-
     public void setRegdate(Date regdate) {
         this.regdate = regdate;
     }
-
     public int getCnt() {
-        return this.cnt;
+        return cnt;
     }
-
     public void setCnt(int cnt) {
         this.cnt = cnt;
     }
-}
+    public String getCategory() {
+        return category;
+    }
 
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+}
